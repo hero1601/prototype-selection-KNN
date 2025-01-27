@@ -36,4 +36,10 @@ def prototype_selection(images,labels,M,max_iter = 10,tolerance = 1e-4):
 
     return np.array(prototypes),np.array(prototype_labels)
 
+
+def random_selection(images,labels,M):
+    images_size,images_features = images.shape
+    random_indices = np.random.choice(images_size,M,replace=False)
+    return images[random_indices],labels[random_indices]
+
     
